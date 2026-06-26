@@ -1,2 +1,2 @@
 # rock-paper-scissor
-A game played by human against the computer round by round
+A project that involves a  game played by human against the computer round by round
