@@ -10,6 +10,12 @@
 
         console.log("Hello World");
 
+
+        let humanScore = 0;
+
+        let computerScore = 0;
+      
+
         function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -22,27 +28,20 @@
     }
 }
 
-    console.log(getComputerChoice());
 
         function getHumanChoice (){
 
         let choice = prompt ("Enter rock, paper, or scissors");
         return choice;
         }
-        console.log(getHumanChoice());
+         alert("Welcome to Rock, Paper, Scissors!  game You will play 5 rounds against the computer.");
+         alert("kindly enter your choice 5 times");
 
 
           function playGame(){
-        
-        let humanScore = 0;
-
-        let computerScore = 0;
-      
-
-        function playRound(humanChoice, computerChoice){
-
-            humanChoice = humanChoice.toLowerCase();
-
+        for (let i = 1; i < 5; i++) {
+            const humanChoice = getHumanChoice();
+            const computerChoice = getComputerChoice();
 
     if (humanChoice === computerChoice) {
         console.log("It's a tie!");
@@ -59,25 +58,31 @@
         computerScore++;
         console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
     }
+}
 
     console.log(`Human: ${humanScore}, Computer: ${computerScore}`);
 }
-        playRound("rock", "scissors");
-        playRound("paper", "rock");
-        playRound("scissors", "rock");
-        playRound("rock", "paper");
-        playRound("paper", "paper");
+       
+    
+
+    function results(humanScore, computerScore) {
+
+    if (humanScore > computerScore) {
+        alert(`Human: ${humanScore}, Computer: ${computerScore}\nYou win the game!`);
+    } else if (humanScore < computerScore) {
+        alert(`Human: ${humanScore}, Computer: ${computerScore}\nComputer wins the game!`);
+    } else {
+        alert(`Human: ${humanScore}, Computer: ${computerScore}\nThe game is a tie!`);
+    }
 }
-    playGame();
-
-
+        playGame();
+        getHumanChoice();
+        getComputerChoice();
+        results(humanScore, computerScore);
 
         
-
-        
+    
+          
     </script>
-
-
-
 </body>
-</html>
+</html> 
